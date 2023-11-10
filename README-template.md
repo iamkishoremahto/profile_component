@@ -10,36 +10,26 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+- [Author](#author)
+
+
+
 
 ## Overview
+Profile card component challenge
 
-### The challenge
-
-- Build out the project to the designs provided
 
 ### Screenshot
 
 ![](screenshoot/profile.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL here](https://github.com/iamkishoremahto/profile_component.git)
+- Live Site URL: [live site URL here](https://profile-component-three.vercel.app/)
 
 ## My process
 
@@ -48,61 +38,200 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Bootstrap 5
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
 To see how you can add code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card Component</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container-fluid d-flex align-items-center justify-content-center main_wrapper">
+    <img src="images/bg-pattern-top.svg" class="top img-fluid" alt="top">
+    <img src="images/bg-pattern-bottom.svg" class="bottom img-fluid" alt="bottom">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-md-5 card_wrapper d-flex align-items-center justify-content-start">
+        <div class="row profile">
+          <div class="col profile_back">
+            <img src="images/image-victor.jpg" alt="">
+          </div>
+          <div class="col d-flex align-items-center justify-content-start profile_disc flex-column">
+            <h5>Victor Crest <span>26</span></h5>
+            <p>London</p>
+          </div>
+        </div>
+        <div class="row d-flex align-items-center justify-content-start  social_follows">
+          <div class="col">
+            <h5>80K</h5>
+            <p>Followers</p>
+          </div>
+          <div class="col">
+            <h5>803K</h5>
+            <p>Likes</p>
+          </div>
+          <div class="col">
+            <h5>1.4K</h5>
+            <p>Photos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+:root{
+    --Dark_cyan: hsl(185, 75%, 39%);
+    --Very_dark_desaturated_blue: hsl(229, 23%, 23%);
+    --Dark_grayish_blue: hsl(227, 10%, 46%);
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+.main_wrapper{
+    background-color: var(--Dark_cyan);
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.main_wrapper .top{
+    position:absolute;
+    bottom: 40%;
+    right: 50%;
+
+}
+
+.main_wrapper .bottom{
+    position:absolute;
+    top: 40%;
+    left: 52%; 
+}
+
+.card_wrapper{
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    min-width: 350px;
+    min-height: 350px;
+    /* padding: 10px; */
+    padding: 0;
+    overflow: hidden;
+    border-radius: 25px;
+    z-index: 1;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    
+}
+
+.card_wrapper .profile{
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+
+.card_wrapper .profile .profile_back{
+    position: relative;
+    display: flex;
+  
+ 
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image:url("images/bg-pattern-card.svg");
+
+ min-height: 140px;
+    width: 100%;
+}
+.card_wrapper .profile .col img{
+    border: 5px solid rgb(255, 255, 255);
+    position:absolute;
+    z-index: 1;
+    top: 50%;
+    border-radius: 50%;
+}
+
+.profile_disc{
+    margin-top: 16%;
+    
+}
+.profile_disc h5{
+    color: var(--Very_dark_desaturated_blue);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.profile_disc h5 span{
+    color: var(--Dark_grayish_blue);
+    font-weight: 400;
+}
+.profile_disc p{
+    color: var(--Dark_grayish_blue);
+}
+
+.social_follows{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-top: 1px solid var(--Dark_grayish_blue);
+    width: 100%;
+}
+
+.social_follows .col{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+}
+
+.social_follows .col p{
+    color: var(--Dark_grayish_blue);
+    font-size: 15px;
+    font-weight:400 ;
+}
+
+.social_follows .col h5{
+    font-weight: 700;
+    font-size: 18px;
+}
+
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Kishore Kumar Mahto](https://github.com/iamkishoremahto)
+- Frontend Mentor - [@iamkishoremahto](https://www.frontendmentor.io/profile/iamkishoremahto)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
